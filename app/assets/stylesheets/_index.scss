@@ -132,11 +132,15 @@
       height: 60px;
       width: calc(100% - 180px);
       display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
       &__message{
         height: 100%;
         width: 100%;
         padding: 0 40px 0 10px;
       }
+
       &__label{
         position: absolute;
         top: 10px;
