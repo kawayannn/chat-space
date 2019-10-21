@@ -1,0 +1,38 @@
+.header
+  .header__notification
+    グループを作成しました
+
+.group
+  .group__top
+    .group__top--name
+      kawayan
+    .group__top--icon
+      = fa_icon 'cog', class: "group__top--icon"
+      = fa_icon 'users', class: "group__top--icon"
+  .group__list
+    .group__list--title
+      タイトル
+    .group__list--text
+      本文
+
+.main
+  .main__top
+    .main__top--name
+      kawayan
+    %input{type: "submit", value: "Edit", class: "main__top--edit"}
+    .main__top--member
+      Member: kawayan 仮免太郎
+  .main__message
+    .main__message--name
+      kawayan
+    .main__message--date
+      2019/10/18(Fri) 21:11:35
+    .main__message--text
+      こんばんは
+  .main__footer
+    .inputbox
+      %input{type: "text", name: "message", class: "inputbox__message"}
+      %label.inputbox__label
+        = fa_icon "image"
+        %input{type: "file", class: "inputbox__label--image"}
+    %input{type: "submit",value: "Send",class: "sendmessage"}
