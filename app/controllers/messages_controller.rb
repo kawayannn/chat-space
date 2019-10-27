@@ -2,9 +2,13 @@ class MessagesController < ApplicationController
   def index
   end
 
-  def new
+  def create
+      @message = Message.new(message_params)
   end
-end
 
 
   private
+
+  def message_params
+    params.require(:message).permit(:content, :image)
+  end
