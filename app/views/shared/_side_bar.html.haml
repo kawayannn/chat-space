@@ -12,6 +12,7 @@
     - current_user.groups.each do |group|
       .group-footer__list
         = link_to group_message_index_path(@group.params[:id]) do
+        = link_to  do
           .group-footer__list--title
             = group.name
           .group-footer__list--text
