@@ -2,7 +2,7 @@
   .main__top
     .main__top--name
       kawayan
-    = link_to edit_group_path(current_user) do
+    = link_to edit_group_path(@group) do
       %input{type: "submit", value: "Edit", class: "main__top--edit"}
     .main__top--member
       Member: kawayan 仮免太郎
