@@ -2,12 +2,17 @@
   = render 'shared/side_bar'
   .main
     .main__top
-      .main__top--name
-        kawayan
+      .main__top--group-name
+        = @group.name
       = link_to edit_group_path(@group) do
         %input{type: "submit", value: "Edit", class: "main__top--edit"}
-      .main__top--member
-        Member: kawayan 仮免太郎
+      .member-box
+        .member-box__member
+          Member :
+        .member-box__members
+          - @group.users.each do |member|
+            = member.name 
+
     .messages    
       = render @messages
 
