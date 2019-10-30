@@ -1,39 +1,22 @@
-= render 'shared/side_bar'
-= render 'shared/main'
--# .group
--#   .group__top
--#     .group__top--name
--#       = current_user.name
+.wrapper
+  = render 'shared/side_bar'
+  .main
+    .main__top
+      .main__top--name
+        kawayan
+      = link_to edit_group_path(@group) do
+        %input{type: "submit", value: "Edit", class: "main__top--edit"}
+      .main__top--member
+        Member: kawayan 仮免太郎
+    .messages    
+      = render @messages
 
--#     .group__top--icon
--#       = link_to edit_user_path(current_user) do
--#         = fa_icon 'cog', class: "group__top--icon"
--#       = link_to '/groups/new' do
--#         = fa_icon 'pencil-square-o', class: "group__top--icon"
--#   .group__list
--#     .group__list--title
--#       グループ名
--#     .group__list--text
--#       本文
--# .main
--#   .main__top
--#     .main__top--name
--#       kawayan
--#     = link_to edit_group_path(current_user) do
--#       %input{type: "submit", value: "Edit", class: "main__top--edit"}
--#     .main__top--member
--#       Member: kawayan 仮免太郎
--#   .main__message
--#     .main__message--name
--#       kawayan
--#     .main__message--date
--#       2019/10/18(Fri) 21:11:35
--#     .main__message--text
--#       こんばんは
--#   .main__footer
--#     .inputbox
--#       %input{type: "text", name: "message", class: "inputbox__message"}
--#       %label.inputbox__label
--#         = fa_icon "image"
--#         %input{type: "file", class: "inputbox__label--image"}
--#     %input{type: "submit",value: "Send",class: "sendmessage"}
+    .main__footer
+      .inputbox
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'inputbox__message', placeholder: 'type a message'
+          .mask
+            = f.label :image, class: 'mask__label' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'mask__label--image'
+          = f.submit 'Send', class: 'sendmessage'
