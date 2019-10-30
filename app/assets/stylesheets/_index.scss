@@ -36,6 +36,7 @@
     height: -webkit-calc(100vh - 100px);
     background-color: $side-blue-light;
     overflow: scroll;
+    padding-top: 25px;
     &__list{
       clear: both;
       margin: 0 20px 40px;
