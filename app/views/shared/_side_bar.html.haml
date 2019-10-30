@@ -9,10 +9,10 @@
         = link_to '/groups/new' do
           = fa_icon 'pencil-square-o', class: "group__top--icon"
   .group-footer
-    - current_user.groups.each do |group|
+    - current_user.groups.order(created_at: :DESC).each do |group|
       .group-footer__list
         = link_to "/groups/#{group.id}/messages" do
           .group-footer__list--title
             = group.name
           .group-footer__list--text
-            メッセージはまだありません。
+            = group.show_last_message
