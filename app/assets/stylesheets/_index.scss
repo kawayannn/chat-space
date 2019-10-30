@@ -62,8 +62,8 @@
 
   &__top{
     height: 100px;
-    margin-left: 40px;
-    margin-right: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-bottom: 1 #eeeeee;
     background-color: white;
     &--name{
@@ -91,30 +91,37 @@
       padding-bottom: 0;
     }
   }
-
-  &__message{
-    margin: 46px 40px 40px;
-    height: calc(100vh - 200);
+  .messages{
+    height: -webkit-calc(100% - 100px);
     overflow: scroll;
-    &--name{
-      float: left;
-      padding-right: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #434A54;
-    }
-    &--date{
-      font-size: 12px;
-      color: #999999;
-    }
-    &--text{
+    padding-bottom: 100px;
+    .message{
+      margin: 50px 40px 70px;
       clear: both;
-      float: left;
-      padding-top: 10px;
-      font-size: 12px;
+      .uper-message{
+        float: left;
+        &__name{
+          float: left;
+          padding-right: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+        }
+        &__date{
+          font-size: 12px;
+          color: #999999;
+        }
+    }
+      .lower-message{
+        clear: both;
+        float: left;
+        padding-top: 10px;
+        &__content{
+          font-size: 12px;
+        }
+      }
     }
   }
-
   &__footer{
     height: 100px;
     position: fixed;
