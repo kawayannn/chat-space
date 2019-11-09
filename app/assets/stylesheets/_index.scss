@@ -97,7 +97,7 @@
     height: -webkit-calc(100% - 100px);
     overflow: scroll;
     padding-bottom: 120px;
-    .message{
+    &__message{
       margin: 50px 40px 70px;
       clear: both;
       .uper-message{
