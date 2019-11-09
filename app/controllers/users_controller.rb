@@ -6,6 +6,14 @@ class UsersController < ApplicationController
     # end
   end
 
+  def index
+    @users = User.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def update
     if current_user.update(user_params)
       redirect_to root_path, notice: 'ユーザー情報を更新しました'
