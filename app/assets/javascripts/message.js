@@ -42,7 +42,6 @@ $(document).on('turbolinks:load', function() {
       })
       
       .done(function(message){
-        
         var html = new_message(message);
 
         $('.messages').append(html);
