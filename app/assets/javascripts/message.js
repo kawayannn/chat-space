@@ -46,8 +46,7 @@ $(document).on('turbolinks:load', function() {
         var html = new_message(message);
 
         $('.messages').append(html);
-        $('.inputbox__message').val('');
-        $('.mask__label--image').val('');
+        $("#new_message")[0].reset();
         $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
         $('.sendmessage').prop('disabled', false);
       })
