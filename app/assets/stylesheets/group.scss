@@ -102,6 +102,9 @@ li {
     }
     &--remove {
       color: #f05050;
+      float: right;
+      display: inline-block;
+      cursor: pointer;
     }
   }
 }
