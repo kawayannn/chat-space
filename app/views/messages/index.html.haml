@@ -12,8 +12,8 @@
         .member-box__members
           - @group.users.each do |member|
             = member.name 
-
-    .messages    
+            
+    .messages{data: {group_id: "#{@group.id}"}}
       = render @messages
 
     .main__footer
