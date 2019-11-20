@@ -4,7 +4,7 @@ $(function(){
     
     var imageHTML = message.image  ? `<img class src="${message.image}" >`: '';
 
-    var new_message = `<div class="messages__message">
+    var new_message = `<div class="messages__message" data-id="${message.id}">
                         <div class="uper-message">
                           <div class="uper-message__name">
                             ${message.name}
@@ -52,5 +52,30 @@ $(function(){
       alert('エラー');
     });
   })
+  var reloadMessages = function() {
+    last_message_id = $('.messages__message:last').data('id');
+    group_id = $('.messages').data('group-id');
+    $.ajax({
+      url: (`/groups/${group_id}/api/messages`),
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('自動更新成功');
+      var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = new_message(message);
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
+        });
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  if (location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 7000);
+  }
 });
 
