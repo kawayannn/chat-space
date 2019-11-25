@@ -64,6 +64,7 @@ gem 'pry-rails'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'jquery-rails'
 
