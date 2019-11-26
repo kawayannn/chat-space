@@ -7,6 +7,10 @@
   width: 300px;
   float: left;
   color: $white;
+  a{
+    color: white;
+    text-decoration: none;
+  }
   &__top{
     background-color: $side-blue-dark;
     height: 100px;
@@ -25,8 +29,6 @@
         font-weight: 700;
       }
       &--icon{
-        color: $white;
-        float: right;
         line-height: 100px;
         padding-right: 20px;
       }
@@ -94,9 +96,9 @@
     }
   }
   .messages{
-    height: -webkit-calc(100% - 100px);
+    height: -webkit-calc(100% - 190px);
     overflow: scroll;
-    padding-bottom: 120px;
+    padding-bottom: 46px 40px;
     &__message{
       margin: 50px 40px 70px;
       clear: both;
@@ -124,29 +126,25 @@
       }
     }
   }
-  &__footer{
-    height: 100px;
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    background-color: gray;
-    width: -webkit-calc(100% - 300px);
-    .inputbox{
-      float: left;
-      position: relative;
-      height: 60px;
-      width: calc(100% - 180px);
+  .form{
+    padding: 20px 40px;
+    height: 90px;
+    background-color: #ddd;
+    form{
       display: flex;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      #new_message{
-        width: 100%;
-      }
+    }
+    .inputbox{
+      width: 100%;
+      display: flex;
       &__message{
-        height: 100%;
+        position: relative;
+        height: 50px;
         width: 100%;
-        padding: 0 40px 0 10px;
+        &--field{
+          padding: 0 40px 0 10px;
+          height: 50px;
+          width: 100%;
+        }
       }
 
       .mask{
@@ -160,21 +158,22 @@
           }          
         }
       }
+      .sendmessage{
+        line-height: 50px;
+        height: 50px;
+        width: 100px;
+        float: right;
+        background-color: $light_blue;
+        line-height: 50px;
+        text-align: center;
+        color: $white;
+        margin-left: 15px;
+        padding: 0 30px;
+        border-style: none;
+        cursor: pointer;
+      }
     }
-    .sendmessage{
-      line-height: 50px;
-      height: 50px;
-      width: 100px;
-      float: right;
-      background-color: $light_blue;
-      line-height: 50px;
-      text-align: center;
-      color: $white;
-      position: absolute;
-      margin: 5px 10px 10px 30px;
-      border-style: none;
-      cursor: pointer;
-    }
+
 
   }
 }

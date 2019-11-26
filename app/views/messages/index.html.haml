@@ -16,12 +16,13 @@
     .messages{data: {group_id: "#{@group.id}"}}
       = render @messages
 
-    .main__footer
-      .inputbox
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'inputbox__message', placeholder: 'type a message'
-          .mask
-            = f.label :image, class: 'mask__label' do
-              = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, class: 'mask__label--image'
+    .form
+      = form_for [@group, @message] do |f|
+        .inputbox
+          .inputbox__message
+            = f.text_field :content, class: 'inputbox__message--field', placeholder: 'type a message'
+            .mask
+              = f.label :image, class: 'mask__label' do
+                = fa_icon 'picture-o', class: 'icon'
+                = f.file_field :image, class: 'mask__label--image'
           = f.submit 'Send', class: 'sendmessage'

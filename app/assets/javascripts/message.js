@@ -48,9 +48,14 @@ $(function(){
       $('.sendmessage').prop('disabled', false);
     })
 
-    .fail(function(message){
+    .fail(function(){
       alert('エラー');
+    })
+
+    .always(function(){
+      $('.sendmessage').removeAttr("disabled");
     });
+
   })
   var reloadMessages = function() {
     last_message_id = $('.messages__message:last').data('id');
